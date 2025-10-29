@@ -54,7 +54,7 @@ defaultValues:{
   return (
     <>
 
-<button  onClick={toggleShow} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className=" cursor-pointer  w-full block  text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center " type="button">
+<button  onClick={toggleShow} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className=" cursor-pointer  w-full block dark:text-white focus:ring-4 focus:outline-none font-medium text-fuchsia-900  rounded-lg text-sm px-5 py-2.5 text-center " type="button">
   Update Comment
 </button>
 {isShow &&(

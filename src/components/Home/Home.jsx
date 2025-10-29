@@ -63,7 +63,7 @@ let {data ,isLoading ,isError,error}= useQuery({
     <img src={post?.user.photo} alt=""  className='size-[35px]'/>
     <p>{post?.user.name}</p>
   </div>
-  <div className='text-xs text-fuchsia-900'>
+  <div className='text-xs text-fuchsia-900 dark:text-white'>
     {post?.createdAt}
   </div>
 </div>
