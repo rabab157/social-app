@@ -29,6 +29,7 @@ export default function Home() {
 // getPosts ()
 //   },[])
 
+
 function getAllPosts (){
   return axios.get('https://linked-posts.routemisr.com/posts?limit=50',{
     headers : {
@@ -54,20 +55,20 @@ let {data ,isLoading ,isError,error}= useQuery({
     <>
 
     <CreatePost/>
-    {data.map((post)=>(
-      <div  className=' w-full md:w-[80%] lg:w-[50%] rounded-md bg-slate-200 mx-auto my-8 p-4'>
+    {data?.map((post)=>(
+      <div  className=' w-full md:w-[80%] lg:w-[50%] rounded-md shadow-xl mx-auto my-8 p-4 dark:border-2 dark:border-white'>
         <Link key={post?.id} to={`/postdetails/${post?.id}`}>
 <div className='flex justify-between items-center mb-4'>
   <div className='flex items-center gap-4'>
     <img src={post?.user.photo} alt=""  className='size-[35px]'/>
     <p>{post?.user.name}</p>
   </div>
-  <div className='text-xs text-slate-500'>
+  <div className='text-xs text-fuchsia-900'>
     {post?.createdAt}
   </div>
 </div>
-      {post?.body && <h2 className='mb-4'>{post?.body}</h2>}
-      {post?.image && <img src={post?.image} alt={post?.body}  className='w-full rounded-md ' />}
+      {post?.body && <p className='mb-4'>{post?.body}</p>}
+      {post?.image && <img src={post?.image} alt={post?.body}  className='w-[90%] rounded-md  mx-auto' />}
       {console.log(post)}
     </Link>
       <div>
@@ -76,9 +77,12 @@ let {data ,isLoading ,isError,error}= useQuery({
 )}
          </div>
      {post &&(
-       <CreateCommentModal postId= {post?.id}/>
-    )} 
+    
+
+        <CreateCommentModal postId= {post?.id}/>
+      )} 
       </div>
+  
     ))}
     </>
     );

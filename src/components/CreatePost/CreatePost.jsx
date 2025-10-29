@@ -3,9 +3,25 @@ import style from "./CreatePost.module.css"
 import { useForm } from 'react-hook-form'
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { useQueryClient } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+
 
 export default function CreatePost() {
+  
+  function getUserData(){
+    return axios.get(`https://linked-posts.routemisr.com/users/profile-data`,{
+       headers:{
+        token :localStorage.getItem("userToken")}
+    })
+  }
+
+let {data ,isLoading ,isError ,error}= useQuery({
+     queryKey : ['userData'],
+     queryFn : getUserData,
+     select: (data)=>data?.data?.user,
+    })
+    console.log(data)
+
 const queryClient=useQueryClient()
   let form = useForm({
     defaultValues:{
@@ -41,18 +57,25 @@ const queryClient=useQueryClient()
 
   }
   return (<>
-  
+
+
 <form onSubmit={handleSubmit(handelAddPost)}>
-  <div className='w-full md:w-[80%] lg:w-[60%] mx-auto bg-slate-200 my-6 p-3 border border-slate-800 border-2'>
-    <div>
-    <input type="text" {...register('body')} className='w-full border border-slate-400 rounded-lg p-2' placeholder='Post Details'/>
-  </div>
-  <div className='my-4'>
-    <label htmlFor="photo" className='flex items-center gap-2 justify-center my-6 p-5 cursor-pointer text-center block w-full bg-red-400 '> 
-           <i className='fa-solid fa-image fa-2xl'></i></label>
+  <div className='w-full max-w-md bg-white shadow-md rounded-xl p-4 mx-auto my-8 dark:bg-gray-900 dark:shadow-2xl'>
+    <div className='flex items-start space-x-3'>
+      <div>
+              <img className='w-[40px]' src={data?.photo} alt="user photo" />
+      </div>
+      <div className='w-full'>
+    <input type="text" {...register('body')} className='w-full rounded-lg p-1' placeholder='What do you feel?'/>
+      </div>
+  
+  <div className="">
+    <label htmlFor="photo" className=' items-center justify-center cursor-pointer text-center block w-full'> 
+           <i className='fa-solid fa-image fa-xl text-fuchsia-900'></i></label>
       <input type="file" id='photo' {...register('image')}  className='hidden'/>
   </div>
-  <button className='bg-blue-600 text-white w-full rounded-lg p-2 cursor-pointer'>Add Post</button>
+  </div>
+  <button className='mt-3 w-full bg-gradient-to-r from-purple-800 to-fuchsia-800 text-white py-2 rounded-lg hover:opacity-90 transition cursor-pointer'>Add Post</button>
   </div>
 </form>
   </>

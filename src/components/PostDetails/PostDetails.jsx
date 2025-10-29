@@ -23,7 +23,7 @@ export default function PostDetails() {
     select: (data)=>data?.data?.post,
   })
   return (
- <div  className=' w-full md:w-[80%] lg:w-[50%] rounded-md bg-slate-200 mx-auto my-8 p-4'>
+ <div  className=' w-full md:w-[80%] lg:w-[50%] rounded-md mx-auto my-8 p-4 dark:border-2 dark:border-white'>
 <div className='flex justify-between items-center mb-4'>
   <div className='flex items-center gap-4'>
     <img src={data?.user.photo} alt=""  className='size-[35px]'/>

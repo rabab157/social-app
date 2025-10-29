@@ -44,14 +44,14 @@ toast.error(err.response.data.error)
     return (
      <>
      {data?.map((post)=>(
-      <div  className=' w-full md:w-[80%] lg:w-[50%] rounded-md bg-slate-200 mx-auto my-8 p-4'>
+      <div  className=' max-w-md mx-auto bg-white shadow-md rounded-lg p-4 mt-6'>
         <Link key={post?.id} to={`/postdetails/${post?.id}`}>
 <div className='flex justify-between items-center mb-4'>
   <div className='flex items-center gap-4'>
     <img src={post?.user.photo} alt=""  className='size-[35px]'/>
     <p>{post?.user.name}</p>
   </div>
-  <div className='text-xs text-slate-500'>
+  <div className='text-xs text-slate-700'>
     {post?.createdAt}
   </div>
 </div>
@@ -64,9 +64,12 @@ toast.error(err.response.data.error)
     
       )}
       </div>
+
       <CreateCommentModal postId= {post?.id}/>
+      <div className='flex justify-between p-2 '>
       <UpdatePost id={post?.id}/>
-      <button onClick={()=>{deletePost(post.id)}} className='bg-red-600 rounded-lg p-3 w-full'>Delete Post</button>
+      <span onClick={()=>{deletePost(post.id)}} className="text-red-600  px-3 py-2 rounded-md hover:text-red-700">Delete Post</span>
+      </div>
       </div>
     ))}
     </>

@@ -8,18 +8,18 @@ console.log(comment)
   let { commentCreator, createdAt, content ,_id } = comment
 
   return (
-    <div className=' w-full rounded-md border-2 my-2 p-3 border-slate-900 bg-slate-500 text-white'>
+    <div className=' w-[90%] mx-auto  rounded-md border-2 text-white my-4 p-3 shadow-xl bg-fuchsia-950'>
       <div className=' flex justify-between items-center'>
         <div className='flex gap-2 items-center'>
           <img src={commentCreator?.photo} alt="" className='size-[35px]' />
-          <p>{commentCreator?.name}</p>
+          <p className=''>{commentCreator?.name}</p>
         </div>
-        <span className='text-slate-300 text-xs'>{createdAt}</span>
+        <span className=' text-xs'>{createdAt}</span>
       </div>
       <div className="content px-12">
         Comment :{content}
       </div>
-      <div className='my-3 p-4 bg-slate-300 flex gap-3'>
+      <div className='my-3 p-4  flex gap-3'>
         
         <UpdateComment id={_id}/>
         <DeleteComment id={_id}/>

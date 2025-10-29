@@ -31,8 +31,6 @@ defaultValues:{
           });
 
           if(res.data.message==="success"){
-              console.log("yyyyyyyyyyyyyyyy")
-              console.log(res)
               toast.success("comment added successfully");
               queryClient.invalidateQueries({
                 queryKey:['userPosts']
@@ -57,7 +55,7 @@ defaultValues:{
     
 
 
-<button  onClick={toggleShow} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="w-full block my-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+<button  onClick={toggleShow} data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="w-full bg-gradient-to-r from-purple-800 to-fuchsia-800 text-white my-2 py-2 rounded-lg hover:opacity-90 transition cursor-pointer" type="button">
   Add Comment
 </button>
 {isShow &&(
@@ -86,7 +84,7 @@ defaultValues:{
                     </div>
                    
                       
-                    <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Comment</button>
+                    <button type="submit" className="w-full text-white bg-fuchsia-700 hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-fuchsia-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-fuchsia-800 dark:hover:bg-fuchsia-900 dark:focus:ring-fuchsia-800">Add Comment</button>
                     
                 </form>
             </div>

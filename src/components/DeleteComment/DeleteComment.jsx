@@ -33,7 +33,7 @@ export default function DeleteComment({ id }) {
   return (
     <button
       onClick={handleDeleteComment}
-      className='bg-red-500 py-0 rounded-md w-full cursor-pointer'
+      className='text-white rounded-md w-full cursor-pointer '
     >
       Delete Comment
     </button>
