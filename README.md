@@ -3,7 +3,7 @@
 ## 📖 Description
 *Social App* is a personal social media web app built with *React + Vite* and styled using *Tailwind CSS* and *Flowbite*.  
 It allows users to manage their profiles, upload a profile picture, change their password, create posts, comment, edit, and delete them.  
-The app also uses modern React tools for form handling, data fetching, and validation.
+The app also displays posts and comments from other users.
 
 ---
 
@@ -14,13 +14,8 @@ The app also uses modern React tools for form handling, data fetching, and valid
 - 📝 Create, edit, and delete posts  
 - 💬 Add, edit, and delete comments  
 - 📰 View posts and comments from other users  
-- 🧭 Navigation using *React Router DOM*  
-- ⚙ API data fetching with *Axios* and *React Query*  
-- ✅ Form validation using *React Hook Form* + *Zod*  
-- 🔔 Notifications using *React Hot Toast*  
-- 🎨 Modern UI with *Tailwind CSS* + *Flowbite Components*  
-- 🧠 Clean and reusable components built with *Generate React CLI*  
-- 💡 Linting and code quality with *ESLint*  
+- ⚡ Fast performance with *Vite*  
+- 🎨 Modern UI using *Tailwind CSS* + *Flowbite Components*  
 
 ---
 
@@ -28,8 +23,8 @@ The app also uses modern React tools for form handling, data fetching, and valid
 | Category | Tools & Libraries |
 |-----------|------------------|
 | *Frontend Framework* | React + Vite |
-| *Styling* | Tailwind CSS, Flowbite, Font Awesome |
-| *Routing* | React Router DOM |
+| *Styling* | Tailwind CSS, Flowbite, FontAwesome |
+| *Routing / Navigation* | React Router DOM |
 | *Forms & Validation* | React Hook Form, Zod, @hookform/resolvers |
 | *Data Fetching* | Axios, @tanstack/react-query |
 | *Notifications* | React Hot Toast |
@@ -66,20 +61,12 @@ The app also uses modern React tools for form handling, data fetching, and valid
 ## 📂 Project Structure
 
 src/
- ┣ components/
- ┃ ┣ Post.jsx
- ┃ ┣ Comment.jsx
- ┃ ┣ Profile.jsx
- ┃ ┣ EditProfile.jsx
- ┃ ┣ Navbar.jsx
- ┃ ┗ UI/
- ┣ pages/
- ┃ ┣ Home.jsx
- ┃ ┗ ProfilePage.jsx
- ┣ hooks/
- ┣ context/
- ┣ App.jsx
- ┗ main.jsx
+ ┣ components/       # all UI components like Post, Comment, Profile
+ ┣ hooks/            # custom React hooks
+ ┣ context/          # React contexts
+ ┣ utils/            # utility functions
+ ┣ styles/           # Tailwind or CSS files
+ ┗ App.jsx            # main entry point
 
 
 ---
@@ -87,4 +74,19 @@ src/
 ## 👩‍💻 Author
 *Rabab Ahmed*  
 Personal project built for learning and improving front-end development skills using *React, **Vite, and **Tailwind CSS*.  
-💼 GitHub: [github.com/rabab157](https://github.com/rabab157) 
+💼 GitHub: [github.com/rabab157](https://github.com/rabab157)
+
+---
+
+## 📖 وصف المشروع (Arabic)
+*Social App* هو تطبيق اجتماعي شخصي مبني بـ *React + Vite* و *Tailwind CSS*.  
+يمكن للمستخدمين إدارة حسابهم، رفع صورة البروفايل، تغيير كلمة المرور، إنشاء منشورات، التعليق عليها، وتعديلها أو حذفها.  
+يعرض التطبيق أيضًا منشورات وتعليقات المستخدمين الآخرين.
+
+### 🚀 المميزات
+- صفحة البروفايل الخاصة بالمستخدم  
+- رفع وتعديل صورة البروفايل  
+- تغيير كلمة المرور  
+- إنشاء وتعديل وحذف المنشورات والتعليقات  
+- عرض منشورات وتعليقات الآخرين  
+- تصميم حديث وجذاب باستخدام *Tailwind CSS*
